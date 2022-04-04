@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Logo from "../assets/dog.png";
+import ReorderIcon from '@mui/icons-material/Reorder';
 import '../styles/NavBar.css';
 
 function NavBar() {
@@ -16,6 +17,9 @@ function NavBar() {
         <Link to = "/contact"> Contact </Link>
         <Link to = "/workerlogin"> Worker Login </Link>
         <Link to = "/workerregister"> Worker Register </Link>
+        <button>
+          <ReorderIcon />
+        </button>
       </div>
     </div>
     )
