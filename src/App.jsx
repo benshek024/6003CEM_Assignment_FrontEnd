@@ -1,10 +1,14 @@
 import React from 'react';
 import './App.css';
+import Navbar from "./components/NavBar";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 function App() {
   return (
     <main>
-      React⚛️ + Vite⚡ + Replit🌀
+      <div className = "App">
+        <NavBar />
+      </div>
     </main>
   );
 }
