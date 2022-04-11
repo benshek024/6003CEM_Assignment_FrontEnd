@@ -21,7 +21,7 @@ function NavBar() {
           <Link to = "/doglist"> Dog List </Link>
           <Link to = "/contact"> Contact </Link>
           <Link to = "/workerlogin"> Worker Login </Link>
-          <Link to = "/workerregister"> Worker Register </Link>
+          <Link to = "/workerregis"> Worker Register </Link>
         </div>
       </div>
       <div className = "rightSide">
@@ -30,7 +30,7 @@ function NavBar() {
         <Link to = "/doglist"> Dog List </Link>
         <Link to = "/contact"> Contact </Link>
         <Link to = "/workerlogin"> Worker Login </Link>
-        <Link to = "/workerregister"> Worker Register </Link>
+        <Link to = "/workerregis"> Worker Register </Link>
         <button onClick = {toggleNavBar}>
           <ReorderIcon />
         </button>
