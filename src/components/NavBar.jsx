@@ -1,41 +1,30 @@
-import React, {useState} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import Logo from "../assets/dog.png";
-import ReorderIcon from '@mui/icons-material/Reorder';
-import '../styles/NavBar.css';
+import UserContext from '../contexts/user';
+import {Menu} from 'antd';
 
-function NavBar() {
 
-  const [openLinks, setOpenLinks] = useState(false)
-  const toggleNavBar = () => {
-    setOpenLinks(!openLinks);
-  }
+function NavBar(props) {
+
+  const logout = useContext(UserContext);
   
   return (
-    <div className = "navbar">
-      <div className = "leftSide" id = {openLinks ? "open" : "close"}>
-        <img src = {Logo} />
-        <div className = "hiddenLinks">
-          <Link to = "/"> Home </Link>
-          <Link to = "/about"> About </Link>
-          <Link to = "/doglist"> Dog List </Link>
-          <Link to = "/contact"> Contact </Link>
-          <Link to = "/workerlogin"> Worker Login </Link>
-          <Link to = "/workerregis"> Worker Register </Link>
-        </div>
-      </div>
-      <div className = "rightSide">
-        <Link to = "/"> Home </Link>
-        <Link to = "/about"> About </Link>
-        <Link to = "/doglist"> Dog List </Link>
-        <Link to = "/contact"> Contact </Link>
-        <Link to = "/workerlogin"> Worker Login </Link>
-        <Link to = "/workerregis"> Worker Register </Link>
-        <button onClick = {toggleNavBar}>
-          <ReorderIcon />
-        </button>
-      </div>
-    </div>
+    <UserContext.Consumer>
+      {({logout, users}) => (
+        <>
+          <div className="logo" />
+          <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
+            <Menu.Item key="1" >Home<Link to="/"></Link></Menu.Item>
+        <Menu.Item key="2" >Dogs for Adoption<Link to="/dogs4adopt"></Link></Menu.Item>
+        <Menu.Item key="3" >About<Link to="/about"></Link></Menu.Item>
+        <Menu.Item key="4" onClick={logout} type="primary"  >{users.loggedIn&&<Link to="/">Logout</Link>}
+        </Menu.Item><Menu.Item key="5" onClick={logout} type="primary"  >{users.loggedIn&&<Link to="/img_Page">UploadImage</Link>}
+        </Menu.Item>
+          </Menu>
+        </>
+      
+      )}
+    </UserContext.Consumer>
     )
 }
 
