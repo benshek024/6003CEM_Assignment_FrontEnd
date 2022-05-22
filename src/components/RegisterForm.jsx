@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, Button, InputNumber } from 'antd';
 import { status, json } from './RequestHandlers';
 import UserContext from '../contexts/user';
 
@@ -21,11 +21,6 @@ const passwordRules = [
     { required: true, message: 'Please input your password!' }
 ];
 
-const uidRules = [
-  {type: 'number'},
-  {required: true}
-]
-
 const confirmRules = [
     { required: true, message: 'Please confirm your password!' },
     ({ getFieldValue }) => ({
@@ -39,7 +34,7 @@ const confirmRules = [
 ];
 
 const telnumRules = [
-  { type: 'text', pattern: "[0-9]{8}", message: 'The input is not valid phone number!'},
+  { type: 'number', pattern: "[0-9]{8}", message: 'The input is not valid phone number!'},
   { required: true, message: 'Please enter your phone number!' }
 ];
 
@@ -73,12 +68,12 @@ class RegisterForm extends React.Component {
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json"
-        }        
+        }
     })
     .then(status)
     .then(json)
     .then(data => {
-        console.log(data);  
+        console.log(data);
           this.context.regComplete();
     })
     .catch(errorResponse => {
@@ -120,7 +115,7 @@ render() {
             <Input />
         </Form.Item>
 
-        <Form.Item name="usersTelNum" label="Tel Number">
+        <Form.Item name="usersTelNum" label="Phone">
             <Input />
         </Form.Item>
         

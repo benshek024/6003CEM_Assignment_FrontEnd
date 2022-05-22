@@ -1,12 +1,12 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import bgImage from "../assets/dogbg.jpg"
-import '../App.css';
+import LoginForm from'../components/LoginForm';
 
 function Login() {
   return (
-    <div style = {{ backgroundImage: `url(${bgImage})`}}>
-    </div>
+    <> 
+    <h2 style={{ color: 'green' }}>Login</h2>     
+      <LoginForm />
+    </>
   )
 }
 
