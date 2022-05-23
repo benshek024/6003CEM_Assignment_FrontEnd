@@ -29,12 +29,11 @@ function DogsForAdopt() {
         <Row justify="space-around">    
         { 
           dogs && 
-            dogs.map(({dogID, dogName, dogBody})=> (
+            dogs.map(({dogID, dogName, dogBody, adoptable})=> (
               <Col span={8} key={dogID}>
                 <Card  title={dogName} style={{ width: 300 }} bordered={true}>       
                   <p>{dogBody}</p>  
-                  <p></p>
-                  <Link to={`/d/${dogID}`}>Details</Link>
+                  <p>Adoptable? [ {adoptable} ]</p>
                 </Card>
               </Col>))
         }

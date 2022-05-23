@@ -66,8 +66,8 @@ static contextType = UserContext;
     console.log('Logged in successfully');
     console.log("just login  ", values);  
     values.usersLoginPwd=usersLoginPwd;
-    this.context.login(values);  
-}
+    this.context.login(values);
+  }
 
   render() 
   { if(this.context.users.loggedIn==true) 

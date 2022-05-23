@@ -11,6 +11,7 @@ import NotFound from './pages/NotFound'
 import UserContext from './contexts/user';
 import {useNavigate } from 'react-router-dom';
 import NavBar from "./components/NavBar";
+import UploadDog from "./pages/UploadDog";
 const { Header, Content, Footer } = Layout;
 
 class App extends React.Component {
@@ -67,23 +68,22 @@ regComplete() {
         <Link to="/">Home</Link>
         <Link to="/dogs4adopt">Dogs for Adopt</Link>
         <Link to="/about">About</Link>
-  
-          {!context.users.loggedIn&& <Link to="/login">Login</Link>}           {context.users.loggedIn&& <Link to="/" style={{color:"red",background: "#91d5ff"}} type ="link" > Account: {context.users.userLoginAcc}  </Link>} 
-          {!context.users.registerOK&&!context.users.loggedIn&&<Link to="/register">Register</Link>}			      
+        {!context.users.loggedIn&& <Link to="/login">Login</Link>}
+        {!context.users.registerOK&&!context.users.loggedIn&&<Link to="/register">Register</Link>}			      
         </Space>
 
 				<Routes>
-						<Route exact path="/" element={<Home />} />
-            <Route exact path="/register" element={<Registration />} />
-            <Route path="/dogs4adopt" element={<DogsForAdopt />} />
-            <Route path="/login"element={<Login />} />
-						<Route path="/about" element={<About />} />	
+					<Route exact path="/" element={<Home />} />
+          <Route exact path="/register" element={<Registration />} />
+          <Route path="/dogs4adopt" element={<DogsForAdopt />} />
+          <Route path="/login" element={<Login />} />
+					<Route path="/about" element={<About />} />	
+          <Route path="/uploaddog" element={<UploadDog />} />	
 				</Routes>			
 				</Content>
-				
-       <Footer>
-					<p style={{ color: 'green' }}>VT6003CEM Demo</p>
-				</Footer>
+        <Footer>
+				  <p style={{ color: 'green' }}>VT6003CEM Assignment</p>
+			  </Footer>
 			</Router>	
   </UserContext.Provider>  
   </Layout> 
