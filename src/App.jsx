@@ -71,7 +71,7 @@ regComplete() {
           {!context.users.loggedIn&& <Link to="/login">Login</Link>}           {context.users.loggedIn&& <Link to="/" style={{color:"red",background: "#91d5ff"}} type ="link" > Account: {context.users.userLoginAcc}  </Link>} 
           {!context.users.registerOK&&!context.users.loggedIn&&<Link to="/register">Register</Link>}			      
         </Space>
-                       			
+
 				<Routes>
 						<Route exact path="/" element={<Home />} />
             <Route exact path="/register" element={<Registration />} />

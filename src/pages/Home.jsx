@@ -1,11 +1,17 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import bgImage from "../assets/dogbg.jpg"
-import Dogs from "./DogsForAdopt"
+import Grid from "../components/Grid"
+import Search from "../components/Search"
 import '../App.css';
 
 function Home() {
-  return <Dogs />;
+  return (
+    <> 
+    <h2 style={{ color: 'green' }}> Welcome to The Canine Shelter</h2>     
+      <Search />
+    </>
+  )
 }
 
 export default Home
