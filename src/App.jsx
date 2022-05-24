@@ -12,6 +12,7 @@ import UserContext from './contexts/user';
 import {useNavigate } from 'react-router-dom';
 import NavBar from "./components/NavBar";
 import UploadDog from "./pages/UploadDog";
+import DeleteDog from "./pages/DeleteDog";
 const { Header, Content, Footer } = Layout;
 
 class App extends React.Component {
@@ -78,7 +79,8 @@ regComplete() {
           <Route path="/dogs4adopt" element={<DogsForAdopt />} />
           <Route path="/login" element={<Login />} />
 					<Route path="/about" element={<About />} />	
-          <Route path="/uploaddog" element={<UploadDog />} />	
+          <Route path="/uploaddog" element={<UploadDog />} />
+          <Route path="/deletedog" element={<DeleteDog />} />
 				</Routes>			
 				</Content>
         <Footer>

@@ -15,7 +15,7 @@ function SearchDog(props) {
  const[isSearchOK,setSearch]=useState(false);
  const authbasic = props.authbasic;
 
-const onSearch= value => {
+const onSearch = value => {
   console.log("value ",value)
   console.log("press ",`${press}`)
  let urlPath="https://6003CEMAssignmentBackEnd.benshek024.repl.co/api/v1/dogs";

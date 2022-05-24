@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, InputNumber } from 'antd';
+import { Form, Input, Button, InputNumber, message } from 'antd';
 import { status, json } from './RequestHandlers';
 import UserContext from '../contexts/user';
 import HttpCommon from '../common/http-common';
@@ -56,6 +56,7 @@ class UploadForm extends React.Component {
         console.log(data);
     })
     .catch(errorResponse => {
+      message.info(`Possible Duplicated Dog ID Number!`)
 	 console.error(errorResponse);
         alert(`Error: ${errorResponse}`);
     });  
