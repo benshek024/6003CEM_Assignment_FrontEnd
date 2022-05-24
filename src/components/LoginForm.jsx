@@ -71,13 +71,12 @@ static contextType = UserContext;
 
   render() 
   { if(this.context.users.loggedIn==true) 
-   {
+    {
     return(<div>
       <h2>Welcome {this.context.users.usersLoginAcc} ! </h2>
-     <p> Pls. press green button to continue! </p> 
-    </div>)
-      
-      }
+      <p> Wish you have a nice day! </p> 
+      </div>)
+    }
     else 
      return (
         <Form {...formItemLayout} name="login" scrollToFirstError onFinish={this.login}>
@@ -89,7 +88,6 @@ static contextType = UserContext;
             </Form.Item>
             <Form.Item {...tailFormItemLayout}>
            <Button type="primary" htmlType="submit">Login</Button>        
- 
            </Form.Item>
         </Form>
         

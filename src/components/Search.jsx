@@ -18,7 +18,7 @@ function SearchDog(props) {
 const onSearch = value => {
   console.log("value ",value)
   console.log("press ",`${press}`)
- let urlPath="https://6003CEMAssignmentBackEnd.benshek024.repl.co/api/v1/dogs";
+  let urlPath="https://6003CEMAssignmentBackEnd.benshek024.repl.co/api/v1/dogs";
 
   if (press === "dogName") {
     urlPath+=`/search/dogname/${value}`

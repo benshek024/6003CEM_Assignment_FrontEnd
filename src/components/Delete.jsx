@@ -5,7 +5,6 @@ import { status, json } from './RequestHandlers';
 import {Table, Alert, Select,Col} from 'antd';
 import { Tag, Space } from 'antd';
 
-const { Column} = Table;
 const { Search } = Input;
 
 const dogidRules = [
@@ -20,22 +19,27 @@ function DeleteDog(props){
 const onSearch = value => {
   console.log("value ",value)
   console.log("press ",`${press}`)
- let urlPath="https://6003CEMAssignmentBackEnd.benshek024.repl.co/api/v1/dogs";
-
+  let urlPath="https://6003CEMAssignmentBackEnd.benshek024.repl.co/api/v1/dogs";
+  setDelete(false)
   if (press === "delete") {
     urlPath+=`/${value}`
   }
   console.log("urlPath ",urlPath)
-  return(fetch(`${urlPath}`,{
-        method: "DELETE",
-        headers:{"Authorization": "Basic " +`${authbasic}`}
+  return(
+    fetch(urlPath,{
+      method: "DELETE",
+      headers:{"Authorization": "Basic " +`${authbasic}`}
   })
   .then(status)
-  .then(json => { 
-    setDelete(true);
+  .then(json => {
+    setDelete(true)
     value="";
+    message.info("Dog Deleted!")
   })
-  .catch(err => console.log("Error fetching dogs", err)) 
+  .catch(err => { 
+    console.log("Error fetching dogs", err)
+    message.info("No Record Found About This Dog ID!")
+  }) 
   ) 
 }
 

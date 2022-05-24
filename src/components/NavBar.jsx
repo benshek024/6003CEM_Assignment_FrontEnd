@@ -22,6 +22,7 @@ function NavBar(props) {
             <Menu.Item key="6" onClick={logout} type="primary"  >{users.loggedIn&&<Link to="/">Logout</Link>}</Menu.Item>
             <Menu.Item key="7" >{users.loggedIn&&<Link to="/uploaddog">Upload Dog</Link>}</Menu.Item>
             <Menu.Item key="8" >{users.loggedIn&&<Link to="/deletedog">Delete Dog</Link>}</Menu.Item>
+            <Menu.Item key="9" >{users.loggedIn&&<Link to="/updatedog">Update Dog</Link>}</Menu.Item>
           </Menu>
         </>
       
