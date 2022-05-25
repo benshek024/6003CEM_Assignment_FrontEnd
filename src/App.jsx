@@ -69,7 +69,6 @@ regComplete() {
         <Space>
         <Link to="/">Home</Link>
         <Link to="/dogs4adopt">Dogs for Adopt</Link>
-        <Link to="/about">About</Link>
         {!context.users.loggedIn&& <Link to="/login">Login</Link>}
         {!context.users.registerOK&&!context.users.loggedIn&&<Link to="/register">Register</Link>}			      
         </Space>

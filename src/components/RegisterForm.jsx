@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, InputNumber } from 'antd';
+import { Form, Input, Button, InputNumber, message } from 'antd';
 import { status, json } from './RequestHandlers';
 import UserContext from '../contexts/user';
 
@@ -78,7 +78,8 @@ class RegisterForm extends React.Component {
     })
     .catch(errorResponse => {
 	 console.error(errorResponse);
-        alert(`Error: ${errorResponse}`);
+      message.info("Potential Duplicated User Account!");
+      alert(`Error: ${errorResponse}`);
     });  
   }
 
